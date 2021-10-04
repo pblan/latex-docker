@@ -1,0 +1,22 @@
+\documentclass{abgabe}
+\usepackage{standalone}
+
+\setauthor{Max Mustermann} % Autor hier
+\setmodule{Beispielmodul} % Modulname hier
+\setsheetnum{1} % Blattnummer hier
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+    \begingroup
+    \renewenvironment{questions}{}{}
+    %\setcounter{question}{5}
+    \input{exercise1}
+    \input{exercise1}
+    \input{exercise1}
+    \input{exercise1}
+    \endgroup
+\end{questions}
+
+\end{document}

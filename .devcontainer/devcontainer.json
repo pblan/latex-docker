@@ -1,0 +1,81 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.3/containers/docker-existing-dockerfile
+{
+	"name": "Docker LaTeX",
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+	"dockerFile": "../Dockerfile",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"latex-workshop.intellisense.unimathsymbols.enabled": true,
+		"latex-workshop.latex.autoBuild.interval": 100,
+		"latex-workshop.latex.autoBuild.run": "onSave",
+		"latex-workshop.latex.tools": [
+			{
+				"name": "latexmk",
+				"command": "latexmk",
+				"args": [
+					"-pdf",
+					"%DOC%"
+				]
+			},
+			{
+				"name": "pdflatex",
+				"command": "pdflatex",
+				"args": [
+					"--shell-escape",
+					"-synctex=1",
+					"-interaction=nonstopmode",
+					"-file-line-error",
+					"%DOC%"
+				]
+			},
+			{
+				"name": "bibtex",
+				"command": "bibtex",
+				"args": [
+					"%DOCFILE%"
+				]
+			}
+		],
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "latexmk",
+				"tools": [
+					"latexmk"
+				]
+			},
+			{
+				"name": "pdflatex",
+				"tools": [
+					"pdflatex"
+				]
+			},
+			{
+				"name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+				"tools": [
+					"pdflatex",
+					"bibtex",
+					"pdflatex",
+					"pdflatex"
+				]
+			}
+		],
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"james-yu.latex-workshop",
+		"tomoki1207.pdf"
+	]
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Uncomment the next line to run commands after the container is created - for example installing curl.
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
