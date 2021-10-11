@@ -1,4 +1,8 @@
 # latex-docker
+## Building
+```bash
+docker build -t "pblan/latex" .
+```
 ## Usage (CLI)
 
 This command: 
@@ -9,7 +13,7 @@ This command:
 - mounts the current directory to the container under `/mnt` (`-v ($pwd):/mnt`)
 
 ```bash 
-docker run --rm --name "project-name" -it -v $(pwd):/mnt pblan/latex
+docker run --rm --name "project-name" -it -v $(pwd):/mnt "pblan/latex"
 ``` 
 
 Then you can just use:
@@ -19,7 +23,7 @@ latexmk -pdf
 ... to run LaTeX on all `.tex` files in the current directory.
 
 ```bash
-latexmk -pdf myfile.tex
+latexmk -pdf "myfile.tex"
 ```
 ... to run LaTeX on the specified `myfile.tex` file
 
@@ -42,9 +46,10 @@ For a more detailed description, see https://code.visualstudio.com/docs/remote/c
 
 
 *Manual Usage (Recommended)*
-This command mounts the folders `~/GitHub/fha-sto`, `~/GitHub/fha-swt` and `~/GitHub/fha-db` to the container:
+
+This *example* command mounts the folders `~/GitHub/fha-sto`, `~/GitHub/fha-swt` and `~/GitHub/fha-db` to the container:
 ```bash
-docker run --rm --name "latex" -itd --restart always -v ~/GitHub/fha-sto:/mnt/fha-sto -v ~/GitHub/fha-swt:/mnt/fha-swt -v ~/GitHub/fha-db:/mnt/fha-db latex
+docker run --rm --name "pblan/latex" -itd --restart always -v ~/GitHub/fha-sto:/mnt/fha-sto -v ~/GitHub/fha-swt:/mnt/fha-swt -v ~/GitHub/fha-db:/mnt/fha-db "pblan/latex"
 ``` 
 
 You can then just select the container `latex` within VS Code, add the respective `/mnt` (or single `/mnt/fha-*` folders) to the workspace.
