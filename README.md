@@ -40,5 +40,14 @@ For a more detailed description, see https://code.visualstudio.com/docs/remote/c
 *Notes*
 - This repo includes the `.devcontainer/devcontainer.json` file which defines common build recipes to use with the also specified [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension.
 
+### Manual
+
+This command mounts the folders `~/GitHub/fha-sto`, `~/GitHub/fha-swt` and `~/GitHub/fha-db` to the container:
+```bash
+docker run --rm --name "latex" -itd --restart always -v ~/GitHub/fha-sto:/mnt/fha-sto -v ~/GitHub/fha-swt:/mnt/fha-swt -v ~/GitHub/fha-db:/mnt/fha-db latex
+``` 
+
+You can then just select the container `latex` within VS Code, add the respective `/mnt` (or single `/mnt/fha-*` folders) to the workspace.
+
 ## Notes
 `texlive-full` is about 3.3GB in size, so building the image might take some time.
