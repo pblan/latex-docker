@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  latex:
+    image: pblan/latex
+    volumes:
+      - ../fha-sto:/mnt/fha-sto
+      - ../fha-swt:/mnt/fha-swt
+      - ../fha-db:/mnt/fha-db
+    tty: true
+    restart: always
