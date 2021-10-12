@@ -118,6 +118,8 @@
 \DeclareMathOperator{\col}{col}
 \DeclareMathOperator{\curl}{curl}
 
+\newcommand*\conj[1]{\bar{#1}}
+
 % Roman Numbers
 % \Rnum{3} -> III
 \newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}} 
