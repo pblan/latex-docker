@@ -69,6 +69,11 @@
 
 \usepackage{polynom}
 
+\usepackage{textcomp}  % Required for encoding \textbigcircle
+\usepackage{scalerel}  % Required for emoji \scalerel
+
+\def\☀{\scalerel*{\includegraphics{figures/1f506.eps}}{\textrm{\textbigcircle}}}
+\def\🦵{\scalerel*{\includegraphics{figures/1f9b5.eps}}{\textrm{\textbigcircle}}}
 
 % Show most recent revision number and date in date field
 \makeatletter
