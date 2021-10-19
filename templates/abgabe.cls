@@ -93,6 +93,8 @@
 \usepackage{cool}
 \usepackage{siunitx}
 
+\usepackage{nicefrac}
+
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -171,6 +173,20 @@
     
 
 \newcommand{\vektor}[1]{\begin{pmatrix*}[c] #1 \end{pmatrix*}}
+
+\usepackage[linguistics]{forest}
+
+\forestset{
+    left prob/.style={
+            edge label={node[midway, above left] {\tiny #1}}
+        },
+    right prob/.style={
+            edge label={node[midway, above right] {\tiny #1}}
+        },
+    marked/.style={
+            edge=red, text=red
+        }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Context
