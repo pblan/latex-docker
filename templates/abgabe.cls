@@ -178,10 +178,10 @@
 
 \forestset{
     left prob/.style={
-            edge label={node[midway, above left] {\tiny #1}}
+            edge label={node[midway, above left] {\tiny #1 \%}}
         },
     right prob/.style={
-            edge label={node[midway, above right] {\tiny #1}}
+            edge label={node[midway, above right] {\tiny #1 \%}}
         },
     marked/.style={
             edge=red, text=red
