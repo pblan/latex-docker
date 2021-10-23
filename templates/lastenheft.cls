@@ -199,39 +199,13 @@
   \renewcommand{\authorname}{#1}
   }
 
-% sheet number / Übungsblattnummer
-\newcommand{\sheetnum}{}
-\newcommand{\setsheetnum}[1]{
-  \renewcommand{\sheetnum}{#1}
-}
-
-% module / Fach
-\newcommand{\module}{}
-\newcommand{\setmodule}[1]{
-  \renewcommand{\module}{#1}
-}
-
-% sheettype / Fachtyp
-\newcommand{\sheettype}{\IfLanguageName{ngerman}{Hausaufgabenblatt}{Exercise}}
-\newcommand{\setsheettype}[1]{
-  \renewcommand{\sheettype}{#1}
-}
-
-\renewcommand{\solutiontitle}{\noindent\textbf{\IfLanguageName{ngerman}{Lösung}{Solution}:}\par}
-\newcommand{\lsheet}{\sheettype~\sheetnum}
-
 \usepackage{etoolbox}
-
-\lhead{\ifdefempty{\sheetnum}{}{\lsheet}}
-\rhead{\ifdefempty{\module}{}{\module}}
 
 \lfoot{}
 \cfoot[\IfLanguageName{ngerman}{Seite \thepage\ von \numpages}{Page \thepage\ of \numpages}]{\IfLanguageName{ngerman}{Seite \thepage\ von \numpages}{Page \thepage\ of \numpages}}
 \rfoot{}
 
 \runningheadrule
-
-\title{\module \\ {\large \ifdefempty{\sheetnum}{}{\lsheet}}}
 
 \author{\authorname}
 
