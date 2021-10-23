@@ -49,8 +49,6 @@
 \usepackage{blindtext}
 \usepackage{footnote}
 
-\makesavenoteenv{solution}
-
 \newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
 \newcommand{\gq}[1]{\glq{}#1\grq{}}
 
@@ -67,13 +65,8 @@
 \definecolor{fhred}{RGB}{168,46,104}
 \definecolor{fhpurple}{RGB}{147,81,159}
 
-\usepackage{polynom}
-
 \usepackage{textcomp}  % Required for encoding \textbigcircle
 \usepackage{scalerel}  % Required for emoji \scalerel
-
-\def\☀{\scalerel*{\includegraphics{figures/1f506.eps}}{\textrm{\textbigcircle}}}
-\def\🦵{\scalerel*{\includegraphics{figures/1f9b5.eps}}{\textrm{\textbigcircle}}}
 
 % Show most recent revision number and date in date field
 \makeatletter
@@ -146,6 +139,7 @@
   linkcolor = matse,
   urlcolor = matse
 ]{hyperref}
+
 \usepackage{bookmark}
 
 \makeatletter
