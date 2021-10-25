@@ -49,6 +49,43 @@
 \usepackage{blindtext}
 \usepackage{footnote}
 \usepackage{pdfpages}
+\usepackage{nicefrac}
+
+\usepackage[linguistics]{forest}
+
+\forestset{
+    above left prob/.style={
+            edge label={node[midway, above left] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    above right prob/.style={
+            edge label={node[midway, above right] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    below left prob/.style={
+            edge label={node[midway, below left] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    below right prob/.style={
+            edge label={node[midway, below right] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    left prob/.style={
+            edge label={node[midway, left] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    right prob/.style={
+            edge label={node[midway, right] {#1}},
+            %edge label={node[midway, fill=white] {\tiny #1}}
+    },
+    marked/.style={
+            edge=red, text=red
+    },
+    wide/.style={
+      s sep+=15pt,
+      l sep+=40pt,
+    }
+}
 
 \makesavenoteenv{solution}
 
