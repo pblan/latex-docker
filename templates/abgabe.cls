@@ -48,32 +48,14 @@
 % Utilities
 \usepackage{blindtext}
 \usepackage{footnote}
+\usepackage{pdfpages}
 
 \makesavenoteenv{solution}
 
 \newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
 \newcommand{\gq}[1]{\glq{}#1\grq{}}
 
-\usepackage[svgnames]{xcolor}
-% https://s3.amazonaws.com/edwardtufte.com/colorblind_palette.png
-\definecolor{orange}{RGB}{230,159,0}
-\definecolor{skyblue}{RGB}{86,180,233}
-\definecolor{bluishgreen}{RGB}{0,158,115}
-\definecolor{vermillion}{RGB}{213,94,0}
-\definecolor{reddishpurple}{RGB}{204,121,167}
-\definecolor{matse}{RGB}{11,102,168}
-\definecolor{fhmint}{RGB}{0,177,172}
-\definecolor{fhblue}{RGB}{0,141,208}
-\definecolor{fhred}{RGB}{168,46,104}
-\definecolor{fhpurple}{RGB}{147,81,159}
-
 \usepackage{polynom}
-
-\usepackage{textcomp}  % Required for encoding \textbigcircle
-\usepackage{scalerel}  % Required for emoji \scalerel
-
-\def\☀{\scalerel*{\includegraphics{figures/1f506.eps}}{\textrm{\textbigcircle}}}
-\def\🦵{\scalerel*{\includegraphics{figures/1f9b5.eps}}{\textrm{\textbigcircle}}}
 
 % Show most recent revision number and date in date field
 \makeatletter
@@ -92,8 +74,7 @@
 \usepackage{braket}
 \usepackage{cool}
 \usepackage{siunitx}
-
-\usepackage{nicefrac}
+\usepackage{venndiagram}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
@@ -125,7 +106,10 @@
 \DeclareMathOperator{\col}{col}
 \DeclareMathOperator{\curl}{curl}
 
+%\newcommand*\conj[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+%\newcommand*\conj[1]{\overline{#1}}
 \newcommand*\conj[1]{\,\overline{\!{#1}}}
+%\newcommand*\conj[1]{\bar{#1}}
 
 % Roman Numbers
 % \Rnum{3} -> III
@@ -142,9 +126,9 @@
 % Links and Metadata
 \usepackage[
   colorlinks,
-  citecolor = fhmint,
-  linkcolor = matse,
-  urlcolor = matse
+  %citecolor = fhmint,
+  %linkcolor = matse,
+  %urlcolor = matse
 ]{hyperref}
 \usepackage{bookmark}
 
@@ -173,20 +157,6 @@
     
 
 \newcommand{\vektor}[1]{\begin{pmatrix*}[c] #1 \end{pmatrix*}}
-
-\usepackage[linguistics]{forest}
-
-\forestset{
-    left prob/.style={
-            edge label={node[midway, above left] {\tiny #1 \%}}
-        },
-    right prob/.style={
-            edge label={node[midway, above right] {\tiny #1 \%}}
-        },
-    marked/.style={
-            edge=red, text=red
-        }
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Context
