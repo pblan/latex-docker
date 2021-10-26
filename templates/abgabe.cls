@@ -142,6 +142,7 @@
 \DeclareMathOperator{\row}{row}
 \DeclareMathOperator{\col}{col}
 \DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\diff}{d}
 
 %\newcommand*\conj[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 %\newcommand*\conj[1]{\overline{#1}}
@@ -155,9 +156,48 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diagrams
 \usepackage{tikz}
-\usepackage{pgfplots}
+\usepackage{tikzscale}
+\usepackage{pgfplots, pgfplotstable}
 \usepgfplotslibrary{fillbetween}
-\pgfplotsset{compat=1.8}
+
+\makeatletter
+\long\def\ifnodedefined#1#2#3{%
+    \@ifundefined{pgf@sh@ns@#1}{#3}{#2}%
+}
+
+\pgfplotsset{
+  compat=1.8,
+  % src: https://tex.stackexchange.com/questions/578935/how-to-change-the-dot-of-discontinuous-latex-plot
+  % comments based on: https://tex.stackexchange.com/questions/578935/how-to-change-the-dot-of-discontinuous-latex-plot
+  discontinuous/.style={ 
+  scatter,
+  scatter/@pre marker code/.code={
+      \ifnodedefined{marker}{
+          \pgfpointdiff{\pgfpointanchor{marker}{center}}%
+            {\pgfpoint{0}{0}}%
+            \ifdim\pgf@y>0pt
+              %\tikzset{options/.style={mark=*, fill=white}}
+              \tikzset{options/.style={mark=*}}
+              \draw [densely dashed] (marker-|0,0) -- (0,0);
+              %\draw plot [mark=*] coordinates {(marker-|0,0)};
+              \draw plot [mark=*,mark options={fill=white}] coordinates {(marker-|0,0)};
+            \else
+              \tikzset{options/.style={mark=none}}
+            \fi
+      }{
+          \tikzset{options/.style={mark=none}}        
+      }
+      \coordinate (marker) at (0,0);
+      \begin{scope}[options]
+  },
+  scatter/@post marker code/.code={\end{scope}}
+  },
+  table/create on use/cumulative distribution/.style={
+    create col/expr={\pgfmathaccuma + \thisrow{f(x)}}
+  }
+}
+
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Links and Metadata
