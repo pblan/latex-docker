@@ -123,6 +123,7 @@
 \newcommand{\Eig}{\operatorname{Eig}}
 \DeclareMathOperator{\Exists}{\exists}
 \DeclareMathOperator{\Forall}{\forall}
+\DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
 
