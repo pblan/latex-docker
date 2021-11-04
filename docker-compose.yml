@@ -1,18 +1,15 @@
 version: '3.7'
 services:
   latex:
+    container_name: latex
     image: pblan/latex
     volumes:
       # required
-      - .:/mnt/latex-docker 
+      - .:/root/texmf/tex/latex
       # change lines below if necessary
-      - ../fha-sto:/mnt/fha-sto
-      - ../fha-swt:/mnt/fha-swt
-      - ../fha-db:/mnt/fha-db
-      - ../matse-spicker:/mnt/matse-spicker
+      - ../fha-sto:/mnt/fha-sto/
+      - ../fha-swt:/mnt/fha-swt/
+      - ../fha-db:/mnt/fha-db/
+      - ../matse-spicker:/mnt/matse-spicker/
     tty: true
     restart: always
-    command: /bin/bash -c 
-    "mkdir -p /root/texmf/tex/latex/
-    && ln -s /mnt/latex-docker/local /root/texmf/tex/latex/
-    && texhash /root/texmf/"

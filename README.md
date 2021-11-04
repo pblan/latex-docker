@@ -1,22 +1,38 @@
 # latex-docker
-## Building
+## Setup
+Building the image:
+
 ```bash
 docker build -t "pblan/latex" .
 ```
+
+Starting the container using `docker-compose` (recommended!):
+```bash
+docker-compose up -d
+```
+
 ## Usage (CLI)
 
-This command: 
-- runs the container (`docker run`),
-- called `project-name` (`--name "project-name"`)
-- removes the container's file system after it exits (`--rm`)
-- allocates an interactive (pseudo) tty (`-it`)
-- mounts the current directory to the container under `/mnt` (`-v ($pwd):/mnt`)
+Mount the required folders as seen in the `docker-compose.yml`:
+```yml
+version: '3.7'
+services:
+  latex:
+    container_name: latex
+    image: pblan/latex
+    volumes:
+      # required
+      - .:/root/texmf/tex/latex
+      # change lines below if necessary
+      - ../fha-sto:/mnt/fha-sto/
+      - ../fha-swt:/mnt/fha-swt/
+      - ../fha-db:/mnt/fha-db/
+      - ../matse-spicker:/mnt/matse-spicker/
+    tty: true
+    restart: always
+```
 
-```bash 
-docker run --rm --name "project-name" -it -v $(pwd):/mnt "pblan/latex"
-``` 
-
-Then you can just use:
+Inside the container you can just use:
 ```bash
 latexmk -pdf
 ```
