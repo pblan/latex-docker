@@ -3,8 +3,16 @@ services:
   latex:
     image: pblan/latex
     volumes:
+      # required
+      - .:/mnt/latex-docker 
+      # change lines below if necessary
       - ../fha-sto:/mnt/fha-sto
       - ../fha-swt:/mnt/fha-swt
       - ../fha-db:/mnt/fha-db
+      - ../matse-spicker:/mnt/matse-spicker
     tty: true
     restart: always
+    command: /bin/bash -c 
+    "mkdir -p /root/texmf/tex/latex/
+    && ln -s /mnt/latex-docker/local /root/texmf/tex/latex/
+    && texhash /root/texmf/"

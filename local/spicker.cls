@@ -46,6 +46,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Utilities
+\usepackage[svgnames]{xcolor}
 \usepackage{blindtext}
 \usepackage{footnote}
 \usepackage{pdfpages}
@@ -88,7 +89,6 @@
 }
 
 
-\usepackage[svgnames]{xcolor}
 % https://s3.amazonaws.com/edwardtufte.com/colorblind_palette.png
 \definecolor{orange}{RGB}{230,159,0}
 \definecolor{skyblue}{RGB}{86,180,233}
