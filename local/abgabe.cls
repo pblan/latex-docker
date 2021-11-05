@@ -124,6 +124,7 @@
 \DeclareMathOperator{\Exists}{\exists}
 \DeclareMathOperator{\Forall}{\forall}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Mean}{E}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
 
