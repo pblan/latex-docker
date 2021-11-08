@@ -70,5 +70,9 @@ docker run --rm --name "pblan/latex" -itd --restart always -v ~/GitHub/fha-sto:/
 
 You can then just select the container `latex` within VS Code, add the respective `/mnt` (or single `/mnt/fha-*` folders) to the workspace.
 
+# Using SSH Keys
+If you encounter problems using SSH keys inside the development container, see the following guide:
+https://code.visualstudio.com/docs/remote/containers#_using-ssh-keys
+
 ## Notes
 `texlive-full` is about 3.3GB in size, so building the image might take some time.

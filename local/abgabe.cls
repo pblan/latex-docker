@@ -196,6 +196,9 @@
   },
   table/create on use/cumulative distribution/.style={
     create col/expr={\pgfmathaccuma + \thisrow{f(x)}}
+  },
+  table/create on use/density function/.style={
+    create col/expr={\thisrow{f(x)}}
   }
 }
 

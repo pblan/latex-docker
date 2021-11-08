@@ -208,6 +208,9 @@
   },
   table/create on use/cumulative distribution/.style={
     create col/expr={\pgfmathaccuma + \thisrow{f(x)}}
+  },
+  table/create on use/density function/.style={
+    create col/expr={\thisrow{f(x)}}
   }
 }
 
@@ -217,7 +220,7 @@
 % Links and Metadata
 \usepackage[
   colorlinks,
-  citecolor = fhmint,
+  citecolor = .,
   linkcolor = matse,
   urlcolor = matse
 ]{hyperref}
