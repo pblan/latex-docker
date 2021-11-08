@@ -1,7 +1,5 @@
 % Additional warnings for deprecated things
 \RequirePackage[l2tabu, orthodox]{nag}
-% Enable own macros
-\RequirePackage{mymacros}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{abgabe}
@@ -16,6 +14,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % exam format with answers
 \LoadClass[answers]{exam}
+% Enable own macros
+\RequirePackage{mymacros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enable utf8

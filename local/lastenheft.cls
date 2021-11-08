@@ -1,7 +1,5 @@
 % Additional warnings for deprecated things
 \RequirePackage[l2tabu, orthodox]{nag}
-% Enable own macros
-\RequirePackage{mymacros}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lastenheft}
@@ -16,6 +14,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % article format with a4paper
 \LoadClass[a4paper]{article}
+% Enable own macros
+\RequirePackage{mymacros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enable utf8

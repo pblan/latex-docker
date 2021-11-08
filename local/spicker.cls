@@ -1,7 +1,5 @@
 % Additional warnings for deprecated things
 \RequirePackage[l2tabu, orthodox]{nag}
-% Enable own macros
-\RequirePackage{mymacros}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{spicker}
@@ -16,6 +14,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Compact scrartcl format
 \LoadClass[a4paper,parskip=half-,DIV=15,fontsize=11pt]{scrartcl}
+% Enable own macros
+\RequirePackage{mymacros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enable post-90s text processing
