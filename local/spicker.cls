@@ -180,4 +180,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Citations 
 
-\usepackage[style=numeric, backend=bibtex]{biblatex}
+\usepackage[
+  style=numeric, 
+  backend=bibtex, 
+  sorting=none
+]{biblatex}

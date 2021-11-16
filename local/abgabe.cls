@@ -50,6 +50,7 @@
 \usepackage{blindtext}
 \usepackage{footnote}
 \usepackage{pdfpages}
+\usepackage{diagbox}
 
 \usepackage{nicefrac}
 \usepackage{polynom}
