@@ -45,6 +45,9 @@
 \newcommand{\@minipagerestore}{\setlength{\parskip}{0.8\medskipamount}}
 \makeatother
 
+\usepackage{textcomp}  % Required for encoding \textbigcircle
+\usepackage{scalerel}  % Required for emoji \scalerel
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Utilities
 \usepackage{blindtext}
