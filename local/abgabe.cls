@@ -54,6 +54,7 @@
 \usepackage{footnote}
 \usepackage{pdfpages}
 \usepackage{diagbox}
+\usepackage{enumitem}
 
 \usepackage{nicefrac}
 \usepackage{polynom}
