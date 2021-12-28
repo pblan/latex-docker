@@ -48,6 +48,7 @@
 \DeclareMathOperator{\col}{col}
 \DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\Poi}{Poi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Symbols
@@ -112,6 +113,18 @@
 \makeatletter
 \long\def\ifnodedefined#1#2#3{%
     \@ifundefined{pgf@sh@ns@#1}{#3}{#2}%
+}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\tikzset{
+  declare function={binom(\n,\k)=\n!/(\k!*(\n-\k)!);},
+  declare function={binomial(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);},
+  declare function={hypergeometric(\k,\N,\M,\n)=(binom(\M,\k)*binom(\N-\M,\n-\k))/(binom(\N,\n));},
+  declare function={poisson(\k,\l)=(\l^\k/\k!)*e^(-\l);},
+  declare function={geometric(\k,\p)=(1-\p)^\k*\p;},
 }
 
 \pgfplotsset{
