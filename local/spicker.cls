@@ -47,10 +47,10 @@
 \lstdefinestyle{BashOutputStyle}{
   basicstyle=\small\ttfamily,
   numbers=none,
-  frame=tblr,
+  %frame=tblr,
   keepspaces=true,
   columns=fullflexible,
-  backgroundcolor=\color{blue!10},
+  backgroundcolor=\color{gray!10},
   linewidth=\linewidth,
   %xleftmargin=0.1\linewidth,
 }
