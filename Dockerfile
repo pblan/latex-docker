@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y git
 
 # install texlive distribution
-RUN apt-get update && apt-get install -y texlive-full latexmk
+RUN apt-get update && apt-get install -y texlive-full latexmk python3-pygments
 
 WORKDIR /mnt/
 
