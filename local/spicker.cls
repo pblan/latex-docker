@@ -50,7 +50,7 @@
   %frame=tblr,
   keepspaces=true,
   columns=fullflexible,
-  backgroundcolor=\color{white!10},
+  backgroundcolor=\color{gray!20},
   linewidth=\linewidth,
   %xleftmargin=0.1\linewidth,
 }
