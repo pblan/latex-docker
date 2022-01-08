@@ -31,7 +31,7 @@
 \usepackage{listings}
 
 \lstdefinestyle{SqlInputStyle}{
-  language=mysql,
+  language=sql,
   %firstline=2,% Supress the first line that begins with `%`
   basicstyle=\small\sffamily,
   numberstyle=\tiny,
