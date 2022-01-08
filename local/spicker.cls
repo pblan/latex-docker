@@ -40,9 +40,8 @@
   keepspaces=true,
   columns=fullflexible,
   backgroundcolor=\color{yellow!20},
-  linewidth=0.9\linewidth,
+  linewidth=\linewidth,
   %xleftmargin=0.1\linewidth,
-  xrightmargin=0.0\linewidth,
 }
 
 \lstdefinestyle{BashOutputStyle}{
@@ -52,9 +51,8 @@
   keepspaces=true,
   columns=fullflexible,
   backgroundcolor=\color{blue!10},
-  linewidth=0.9\linewidth,
+  linewidth=\linewidth,
   %xleftmargin=0.1\linewidth,
-  xrightmargin=0.0\linewidth,
 }
 
 \usepackage{lmodern} % upgrade default font
