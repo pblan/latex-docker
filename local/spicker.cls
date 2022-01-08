@@ -30,6 +30,29 @@
 \usepackage{booktabs}
 \usepackage{listings}
 
+\lstdefinestyle{SqlInputStyle}{
+  language=mysql,
+  %firstline=2,% Supress the first line that begins with `%`
+  basicstyle=\small\sffamily,
+  numberstyle=\tiny,
+  numbersep=3pt,
+  frame=tb,
+  columns=fullflexible,
+  backgroundcolor=\color{yellow!20},
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+
+\lstdefinestyle{BashOutputStyle}{
+  basicstyle=\small\ttfamily,
+  numbers=none,
+  frame=tblr,
+  columns=fullflexible,
+  backgroundcolor=\color{blue!10},
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+
 \usepackage{lmodern} % upgrade default font
 \usepackage[sc]{mathpazo} % pretty font for text
 
