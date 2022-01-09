@@ -164,6 +164,12 @@
 }{%
 \end{tcolorbox}}
 
+\newenvironment{sql}[1]{%
+\index{#1}%
+\begin{tcolorbox}[colback=fhblue!5!white, colframe=fhblue!75!black, title={\sffamily SQL: #1}]
+}{%
+\end{tcolorbox}}
+
 \newenvironment{example}[1]{%
 \index[Beispiele]{#1}%
 \begin{tcolorbox}[colback=fhred!5!white, colframe=fhred!75!black, title={\sffamily \IfLanguageName{ngerman}{Beispiel}{Example}: #1}]
