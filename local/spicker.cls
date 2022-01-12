@@ -20,6 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enable post-90s text processing
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Typesetting
@@ -106,17 +107,6 @@
 \usepgfplotslibrary{fillbetween}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Links and Metadata
-\makeatletter
-\AtBeginDocument{
-  \hypersetup{
-    pdftitle = {\@title},
-    pdfauthor = {\@author}
-  }
-}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Environments
 % Just like the 'center' block, but without spacing around it.
 \newenvironment{tightcenter}{%
@@ -128,10 +118,27 @@
 }
 
 %%%%%%%%%%%%%%%%
-% Context Blocks
+% Links and Metadata, Context Blocks
 \usepackage{tcolorbox}
+\usepackage{nameref}
 
 \usepackage[]{imakeidx}
+\usepackage[
+  colorlinks,
+  citecolor = .,
+  linkcolor = matse,
+  urlcolor = matse
+]{hyperref}
+\usepackage{bookmark}
+
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author}
+  }
+}
+\makeatother
 
 \usepackage{iflang}
 \newcommand{\SpickerAlgorithm}{\IfLanguageName{ngerman}{Algorithmus}{Algorithm}}
@@ -154,8 +161,11 @@
 
 \newenvironment{defi}[1]{%
 \index{#1}%
-\begin{tcolorbox}[colback=fhmint!5!white, colframe=fhmint!75!black, title={\sffamily Definition: #1}]
+\label{defi:#1}%
+\begin{tcolorbox}[colback=fhmint!5!white, colframe=fhmint!75!black, title={\sffamily Definition: #1}, label=defi:#1]
+%\begin{tcolorbox}[colback=fhmint!5!white, colframe=fhmint!75!black, title={\sffamily Definition: #1}]
 }{%
+
 \end{tcolorbox}}
 
 \newenvironment{bonus}[1]{%
@@ -177,6 +187,8 @@
 \end{tcolorbox}}
     
 \newcommand{\exampleseparator}{\noindent\rule{\textwidth}{0.2pt}}
+
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}}
 
 %%%%%%%%%%%%%%
 % Split Blocks
