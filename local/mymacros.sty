@@ -76,6 +76,13 @@
 \newcommand{\Fabs}{F_{\text{abs}}}
 \newcommand{\Frel}{F_{\text{rel}}}
 
+\def\ojoin{\setbox0=\hbox{$\bowtie$}%
+  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+
+\newcommand{\lojoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\newcommand{\rojoin}{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\newcommand{\fojoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diagrams
 \RequirePackage[linguistics]{forest}
