@@ -30,6 +30,7 @@
 \usepackage{csquotes}
 \usepackage{booktabs}
 \usepackage{listings}
+\usepackage{soul}
 
 \usepackage{lmodern} % upgrade default font
 \usepackage[sc]{mathpazo} % pretty font for text
@@ -55,6 +56,29 @@
 \color{bookColor}
 
 \lstset{upquote=true}
+
+% better highlighting
+\makeatletter
+\newenvironment{btHighlight}[1][]
+{\begingroup\tikzset{bt@Highlight@par/.style={#1}}\begin{lrbox}{\@tempboxa}}
+{\end{lrbox}\bt@HL@box[bt@Highlight@par]{\@tempboxa}\endgroup}
+
+\newcommand\btHL[1][]{%
+  \begin{btHighlight}[#1]\bgroup\aftergroup\bt@HL@endenv%
+}
+\def\bt@HL@endenv{%
+  \end{btHighlight}%   
+  \egroup
+}
+\newcommand{\bt@HL@box}[2][]{%
+  \tikz[#1]{%
+    \pgfpathrectangle{\pgfpoint{1pt}{0pt}}{\pgfpoint{\wd #2}{\ht #2}}%
+    \pgfusepath{use as bounding box}%
+    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=1pt, inner ysep=0pt, rounded corners=3pt, minimum height=\ht\strutbox+1pt,#1]{\raisebox{1pt}{\strut}\strut\usebox{#2}};
+  }%
+}
+\makeatother
+
 
 \lstdefinelanguage{mysql}
     {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
@@ -99,6 +123,8 @@
     %frame=ltb,
     frame=l,
     framerule=0pt,
+    % better highlighting
+    moredelim=**[is][\btHL]{!}{!},
     % keyword highlighting
     classoffset=1, % starting new class
     otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
