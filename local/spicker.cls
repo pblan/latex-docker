@@ -31,31 +31,6 @@
 \usepackage{booktabs}
 \usepackage{listings}
 
-\lstdefinestyle{SqlInputStyle}{
-  language=sql,
-  %firstline=2,% Supress the first line that begins with `%`
-  basicstyle=\small\sffamily,
-  numberstyle=\tiny,
-  numbersep=3pt,
-  frame=tb,
-  keepspaces=true,
-  columns=fullflexible,
-  backgroundcolor=\color{yellow!20},
-  linewidth=\linewidth,
-  %xleftmargin=0.1\linewidth,
-}
-
-\lstdefinestyle{BashOutputStyle}{
-  basicstyle=\small\ttfamily,
-  numbers=none,
-  %frame=tblr,
-  keepspaces=true,
-  columns=fullflexible,
-  backgroundcolor=\color{gray!20},
-  linewidth=\linewidth,
-  %xleftmargin=0.1\linewidth,
-}
-
 \usepackage{lmodern} % upgrade default font
 \usepackage[sc]{mathpazo} % pretty font for text
 
@@ -64,6 +39,77 @@
 
 \usepackage[shortlabels]{enumitem}
 \setlist{nosep}
+
+\usepackage[scaled=0.85]{beramono}
+%\usepackage[scaled=0.85]{inconsolata}
+
+\usepackage{lstautogobble}
+
+\definecolor{codered}{rgb}{0.788, 0.102, 0.35}
+\definecolor{codegreen}{rgb}{0.137, 0.471, 0.255}
+\definecolor{codeblue}{rgb}{0, 0.333, 0.749}
+\definecolor{codegray}{rgb}{0.627, 0.647, 0.663}
+\definecolor{codepurple}{HTML}{C42043}
+\definecolor{backcolour}{HTML}{F2F2F2}
+\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
+\color{bookColor}
+
+\lstset{upquote=true}
+
+\lstdefinelanguage{mysql}
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
+    keywordstyle=\color{codeblue},
+    sensitive=false,
+    morecomment=[l][\color{codegray}]{--},
+    morecomment=[s][\color{codegray}]{{/*}{*/}},
+    %morecomment=[l][\color{codegreen}]{//},
+    morestring=[b]",
+    morestring=[b]',
+    stringstyle=\color{codered}
+    }
+
+\lstdefinestyle{SqlInputStyle}{
+    backgroundcolor=\color{backcolour},   
+    %commentstyle=\color{codegreen},
+    %keywordstyle=\color{codeblue},
+    %stringstyle=\color{codered},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=true, %
+    autogobble=true,
+    % SQL specific
+    language=mysql,
+    deletekeywords={IDENTITY},
+    deletekeywords={[2]INT},
+    morekeywords={clustered},
+    % show small line numbers
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    numbersep=10pt,
+    stepnumber=1,
+    framesep=5pt,
+    xleftmargin=10pt,
+    framexleftmargin=0pt,
+    %frame=ltb,
+    frame=l,
+    framerule=0pt,
+    % keyword highlighting
+    classoffset=1, % starting new class
+    otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    keywordstyle=\color{codeblue},
+    classoffset=0,
+    classoffset=2, % starting new class
+    otherkeywords={NULL},
+    morekeywords={NULL},
+    keywordstyle=\color{codegreen},
+    classoffset=0,
+}
 
 \makeatletter
 % Re-enable paragraph spacing in minipages;

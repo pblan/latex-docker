@@ -15,6 +15,7 @@
 \definecolor{fhblue}{RGB}{0,141,208}
 \definecolor{fhred}{RGB}{168,46,104}
 \definecolor{fhpurple}{RGB}{147,81,159}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Delimiter
@@ -55,6 +56,7 @@
 \DeclareMathOperator{\cnt}{count}
 \DeclareMathOperator{\ident}{ident}
 \DeclareMathOperator{\schema}{schema}
+\DeclareMathOperator{\dom}{dom}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Symbols
@@ -82,6 +84,8 @@
 \newcommand{\lojoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
 \newcommand{\rojoin}{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
 \newcommand{\fojoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+\newcommand{\dotto}{\stackrel{\boldsymbol{\cdot}}{\to}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diagrams
@@ -181,7 +185,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Environments
-\usepackage{minted}
+\usepackage[cache=false]{minted}
+
 \usepackage{diagbox}
 \usepackage{tabularx}
 \usepackage{makecell}
