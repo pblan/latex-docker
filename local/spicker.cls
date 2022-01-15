@@ -93,7 +93,7 @@
 % }
 
 \lstdefinelanguage{mysql}
-    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING},
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES},
     sensitive=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{codeblue},  
@@ -117,13 +117,17 @@
     % keyword highlighting
     classoffset=1, % starting new class
     %otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
-    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL,NOW},
     keywordstyle=\color{codegreen},
     classoffset=0,
     classoffset=2, % starting new class
     %otherkeywords={NULL},
     morekeywords={NULL},
     keywordstyle=\bfseries\color{codered},
+    classoffset=0,
+    classoffset=2, % starting new class
+    morekeywords={INT, CHAR, VARCHAR, DECIMAL, FLOAT, DATETIME, DEFAULT, BOOLEAN},
+    keywordstyle=\bfseries\color{codeorange},
     classoffset=0,
     % better highlighting
     moredelim=**[is][\btHL]{!}{!},
