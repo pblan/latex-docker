@@ -93,7 +93,7 @@
 % }
 
 \lstdefinelanguage{mysql}
-    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING},
     sensitive=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{codeblue},  
@@ -125,6 +125,8 @@
     morekeywords={NULL},
     keywordstyle=\bfseries\color{codered},
     classoffset=0,
+    % better highlighting
+    moredelim=**[is][\btHL]{!}{!},
     }
 
 \lstdefinestyle{MatseInputStyle}{
@@ -159,8 +161,6 @@
     %frame=ltb,
     frame=l,
     framerule=0pt,
-    % better highlighting
-    moredelim=**[is][\btHL]{!}{!},
 }
 \lstset{style=MatseInputStyle}
 
