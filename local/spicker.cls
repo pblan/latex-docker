@@ -116,12 +116,12 @@
     morestring=[b]',
     % keyword highlighting
     classoffset=1, % starting new class
-    otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    %otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
     morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
     keywordstyle=\color{codegreen},
     classoffset=0,
     classoffset=2, % starting new class
-    otherkeywords={NULL},
+    %otherkeywords={NULL},
     morekeywords={NULL},
     keywordstyle=\bfseries\color{codered},
     classoffset=0,
