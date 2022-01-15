@@ -80,41 +80,40 @@
 }
 \makeatother
 
-% used to color digits
-\newcommand\digitstyle{\color{codeorange}}
-\makeatletter
-\newcommand{\ProcessDigit}[1]
-{%
-  \ifnum\lst@mode=\lst@Pmode\relax%
-   {\digitstyle #1}%
-  \else
-    #1%
-  \fi
-}
+%%% used to color digits
+% \newcommand\digitstyle{\color{codeorange}}
+% \makeatletter
+% \newcommand{\ProcessDigit}[1]
+% {%
+%   \ifnum\lst@mode=\lst@Pmode\relax%
+%    {\digitstyle #1}%
+%   \else
+%     #1%
+%   \fi
+% }
 
 \lstdefinelanguage{mysql}
     {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
-    % keywordstyle bold
-    keywordstyle=\bfseries\color{codeblue},
     sensitive=false,
-    literate=
-    {0}{{{\ProcessDigit{0}}}}1
-    {1}{{{\ProcessDigit{1}}}}1
-    {2}{{{\ProcessDigit{2}}}}1
-    {3}{{{\ProcessDigit{3}}}}1
-    {4}{{{\ProcessDigit{4}}}}1
-    {5}{{{\ProcessDigit{5}}}}1
-    {6}{{{\ProcessDigit{6}}}}1
-    {7}{{{\ProcessDigit{7}}}}1
-    {8}{{{\ProcessDigit{8}}}}1
-    {9}{{{\ProcessDigit{9}}}}1
-    {<=}{{\(\leq\)}}1,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{codeblue},  
+    stringstyle=\color{codered},
+    commentstyle=\color{codegrey},
+    % literate=
+    % *{0}{{{\ProcessDigit{0}}}}1
+    % {1}{{{\ProcessDigit{1}}}}1
+    % {2}{{{\ProcessDigit{2}}}}1
+    % {3}{{{\ProcessDigit{3}}}}1
+    % {4}{{{\ProcessDigit{4}}}}1
+    % {5}{{{\ProcessDigit{5}}}}1
+    % {6}{{{\ProcessDigit{6}}}}1
+    % {7}{{{\ProcessDigit{7}}}}1
+    % {8}{{{\ProcessDigit{8}}}}1
+    % {9}{{{\ProcessDigit{9}}}}1,
     morecomment=[l][\color{codegray}]{--},
     morecomment=[s][\color{codegray}]{{/*}{*/}},
-    %morecomment=[l][\color{codegreen}]{//},
     morestring=[b]",
     morestring=[b]',
-    stringstyle=\color{codered},
     % keyword highlighting
     classoffset=1, % starting new class
     otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
@@ -128,25 +127,27 @@
     classoffset=0,
     }
 
-\lstdefinestyle{SqlInputStyle}{
-    backgroundcolor=\color{backcolour},   
-    %commentstyle=\color{codegreen},
+\lstdefinestyle{MatseInputStyle}{
+    backgroundcolor=\color{backcolour}, 
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{codeblue},  
+    stringstyle=\color{codered},
+    commentstyle=\color{codegrey},
     %keywordstyle=\color{codeblue},
     %stringstyle=\color{codered},
-    basicstyle=\footnotesize\ttfamily,
     breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
     keepspaces=true,
     showspaces=false,
     showstringspaces=false,
-    showtabs=true, %
+    showtabs=false, %
     autogobble=true,
     % SQL specific
-    language=mysql,
-    deletekeywords={IDENTITY},
-    deletekeywords={[2]INT},
-    morekeywords={clustered},
+    % language=mysql,
+    % deletekeywords={IDENTITY},
+    % deletekeywords={[2]INT},
+    % morekeywords={clustered},
     % show small line numbers
     numbers=left,
     numberstyle=\tiny\color{codegray},
@@ -161,6 +162,7 @@
     % better highlighting
     moredelim=**[is][\btHL]{!}{!},
 }
+\lstset{style=MatseInputStyle}
 
 \makeatletter
 % Re-enable paragraph spacing in minipages;
@@ -205,6 +207,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Environments
+\usepackage{algpseudocode}
+
+% for each
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
 % Just like the 'center' block, but without spacing around it.
 \newenvironment{tightcenter}{%
   \setlength\topsep{0pt}
