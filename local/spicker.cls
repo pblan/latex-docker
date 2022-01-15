@@ -49,6 +49,7 @@
 \definecolor{codered}{rgb}{0.788, 0.102, 0.35}
 \definecolor{codegreen}{rgb}{0.137, 0.471, 0.255}
 \definecolor{codeblue}{rgb}{0, 0.333, 0.749}
+\definecolor{codeorange}{rgb}{0.996, 0.541, 0.094}
 \definecolor{codegray}{rgb}{0.627, 0.647, 0.663}
 \definecolor{codepurple}{HTML}{C42043}
 \definecolor{backcolour}{HTML}{F2F2F2}
@@ -79,18 +80,52 @@
 }
 \makeatother
 
+% used to color digits
+\newcommand\digitstyle{\color{codeorange}}
+\makeatletter
+\newcommand{\ProcessDigit}[1]
+{%
+  \ifnum\lst@mode=\lst@Pmode\relax%
+   {\digitstyle #1}%
+  \else
+    #1%
+  \fi
+}
 
 \lstdefinelanguage{mysql}
     {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
     % keywordstyle bold
     keywordstyle=\bfseries\color{codeblue},
     sensitive=false,
+    literate=
+    {0}{{{\ProcessDigit{0}}}}1
+    {1}{{{\ProcessDigit{1}}}}1
+    {2}{{{\ProcessDigit{2}}}}1
+    {3}{{{\ProcessDigit{3}}}}1
+    {4}{{{\ProcessDigit{4}}}}1
+    {5}{{{\ProcessDigit{5}}}}1
+    {6}{{{\ProcessDigit{6}}}}1
+    {7}{{{\ProcessDigit{7}}}}1
+    {8}{{{\ProcessDigit{8}}}}1
+    {9}{{{\ProcessDigit{9}}}}1
+    {<=}{{\(\leq\)}}1,
     morecomment=[l][\color{codegray}]{--},
     morecomment=[s][\color{codegray}]{{/*}{*/}},
     %morecomment=[l][\color{codegreen}]{//},
     morestring=[b]",
     morestring=[b]',
-    stringstyle=\color{codered}
+    stringstyle=\color{codered},
+    % keyword highlighting
+    classoffset=1, % starting new class
+    otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
+    keywordstyle=\color{codegreen},
+    classoffset=0,
+    classoffset=2, % starting new class
+    otherkeywords={NULL},
+    morekeywords={NULL},
+    keywordstyle=\bfseries\color{codered},
+    classoffset=0,
     }
 
 \lstdefinestyle{SqlInputStyle}{
@@ -125,17 +160,6 @@
     framerule=0pt,
     % better highlighting
     moredelim=**[is][\btHL]{!}{!},
-    % keyword highlighting
-    classoffset=1, % starting new class
-    otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
-    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
-    keywordstyle=\color{codeblue},
-    classoffset=0,
-    classoffset=2, % starting new class
-    otherkeywords={NULL},
-    morekeywords={NULL},
-    keywordstyle=\color{codegreen},
-    classoffset=0,
 }
 
 \makeatletter
