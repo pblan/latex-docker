@@ -58,7 +58,8 @@
 
 \lstdefinelanguage{mysql}
     {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN},
-    keywordstyle=\color{codeblue},
+    % keywordstyle bold
+    keywordstyle=\bfseries\color{codeblue},
     sensitive=false,
     morecomment=[l][\color{codegray}]{--},
     morecomment=[s][\color{codegray}]{{/*}{*/}},
@@ -162,6 +163,17 @@
 }{%
   \end{center}
 }
+
+% LaTeX counter interface for \rownum
+% ---
+\makeatletter
+\@ifundefined{c@rownum}{%
+  \let\c@rownum\rownum
+}{}
+\@ifundefined{therownum}{%
+  \def\therownum{\@arabic\rownum}%
+}{}
+\makeatother
 
 %%%%%%%%%%%%%%%%
 % Links and Metadata, Context Blocks
