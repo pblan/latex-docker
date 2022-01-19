@@ -93,7 +93,7 @@
 % }
 
 \lstdefinelanguage{mysql}
-    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES},
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES, CASE, WHEN, THEN, ELSE, END, CROSS, INTERVAL, YEAR, HOUR, ADD, MODIFY, RENAME, TO, IF, EXISTS, NOT, REPLACE, VIEW, START, TRANSACTION, COMMIT, ROLLBACK, AUTOCOMMIT, FOREIGN_KEY_CHECKS, SET, TRUNCATE, LOCK, WRITE, UNLOCK, DELIMITER, PROCEDURE, BEGIN, CALL, TRIGGER, BEFORE, FOR, EACH, ROW, AFTER},
     sensitive=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{codeblue},  
@@ -117,7 +117,7 @@
     % keyword highlighting
     classoffset=1, % starting new class
     %otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
-    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL,NOW},
+    morekeywords={CONCAT, ROUND, COUNT, COALESCE, DISTINCT, MIN, MAX, SUM, AVG, ANY, ALL, NOW, POW, CAST, STR_TO_DATE, DATE_FORMAT, GET_FORMAT, DATEDIFF, TIMEDIFF, DATE_ADD},
     keywordstyle=\color{codegreen},
     classoffset=0,
     classoffset=2, % starting new class
@@ -125,8 +125,8 @@
     morekeywords={NULL},
     keywordstyle=\bfseries\color{codered},
     classoffset=0,
-    classoffset=2, % starting new class
-    morekeywords={INT, CHAR, VARCHAR, DECIMAL, FLOAT, DATETIME, DEFAULT, BOOLEAN},
+    classoffset=3, % starting new class
+    morekeywords={INT, CHAR, VARCHAR, DECIMAL, FLOAT, DATETIME, DEFAULT, BOOLEAN, DATE, TIME, DATETIME},
     keywordstyle=\bfseries\color{codeorange},
     classoffset=0,
     % better highlighting
@@ -294,15 +294,22 @@
 }{%
 \end{tcolorbox}}
 
+\newenvironment{example}[1]{%
+\index[Beispiele]{#1}%
+\begin{tcolorbox}[colback=fhred!5!white, colframe=fhred!75!black, title={\sffamily \IfLanguageName{ngerman}{Beispiel}{Example}: #1}]
+}{%
+\end{tcolorbox}}
+
+% SQL specific
 \newenvironment{sql}[1]{%
-\index{#1}%
+\index[SQL]{#1}%
 \begin{tcolorbox}[colback=fhblue!5!white, colframe=fhblue!75!black, title={\sffamily SQL: #1}]
 }{%
 \end{tcolorbox}}
 
-\newenvironment{example}[1]{%
-\index[Beispiele]{#1}%
-\begin{tcolorbox}[colback=fhred!5!white, colframe=fhred!75!black, title={\sffamily \IfLanguageName{ngerman}{Beispiel}{Example}: #1}]
+\newenvironment{sqlbonus}[1]{%
+\index[SQL]{#1}%
+\begin{tcolorbox}[colback=fhpurple!5!white, colframe=fhpurple!75!black, title={\sffamily SQL-Bonus: #1}]
 }{%
 \end{tcolorbox}}
     

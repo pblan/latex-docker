@@ -194,6 +194,8 @@
 \usepackage{makecell}
 \usepackage{wrapfig}
 \RequirePackage{array}   % for \newcolumntype macro
+\RequirePackage{multirow}   
+\usepackage{arydshln}
 
 \newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
 \newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
@@ -207,6 +209,10 @@
     {\end{array}\right)}
     
 \newcommand{\vektor}[1]{\begin{pmatrix*}[c] #1 \end{pmatrix*}}
+
+\DeclareRobustCommand{\mhl}[1]{%
+  \text{\hl{$#1$}}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General
