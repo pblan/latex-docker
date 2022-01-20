@@ -273,6 +273,12 @@
 }{%
 \end{tcolorbox}}
 
+\newenvironment{info}[1]{%
+\setlist{nosep,leftmargin=*}%
+\begin{tcolorbox}[colback=fhyellow!5!white, colframe=fhyellow!75!black, title={\sffamily Information: #1}]
+}{%
+\end{tcolorbox}}
+
 \newenvironment{code}[1]{%
 \index{#1}%
 \begin{tcolorbox}[colback=fhpurple!5!white, colframe=fhpurple!75!black, title={\sffamily \SpickerCode: #1}]
