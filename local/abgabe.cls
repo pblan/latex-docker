@@ -45,11 +45,10 @@
 \definecolor{codegray}{rgb}{0.627, 0.647, 0.663}
 \definecolor{codepurple}{HTML}{C42043}
 \definecolor{backcolour}{HTML}{F2F2F2}
-\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
-\color{bookColor}
 
 \lstset{upquote=true}
 
+\usepackage{color,soul}
 % better highlighting
 \makeatletter
 \newenvironment{btHighlight}[1][]
@@ -84,8 +83,9 @@
 %   \fi
 % }
 
+
 \lstdefinelanguage{mysql}
-    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES},
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES, CASE, WHEN, THEN, ELSE, END, CROSS, INTERVAL, YEAR, HOUR, ADD, MODIFY, RENAME, TO, IF, EXISTS, NOT, REPLACE, VIEW, START, TRANSACTION, COMMIT, ROLLBACK, AUTOCOMMIT, FOREIGN_KEY_CHECKS, SET, TRUNCATE, LOCK, WRITE, UNLOCK, DELIMITER, PROCEDURE, BEGIN, CALL, TRIGGER, BEFORE, FOR, EACH, ROW, AFTER},
     sensitive=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{codeblue},  
@@ -109,7 +109,7 @@
     % keyword highlighting
     classoffset=1, % starting new class
     %otherkeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL},
-    morekeywords={CONCAT,ROUND,COUNT,COALESCE,DISTINCT,MIN,MAX,SUM,AVG,ANY,ALL,NOW},
+    morekeywords={CONCAT, ROUND, COUNT, COALESCE, DISTINCT, MIN, MAX, SUM, AVG, ANY, ALL, NOW, POW, CAST, STR_TO_DATE, DATE_FORMAT, GET_FORMAT, DATEDIFF, TIMEDIFF, DATE_ADD},
     keywordstyle=\color{codegreen},
     classoffset=0,
     classoffset=2, % starting new class
@@ -117,8 +117,8 @@
     morekeywords={NULL},
     keywordstyle=\bfseries\color{codered},
     classoffset=0,
-    classoffset=2, % starting new class
-    morekeywords={INT, CHAR, VARCHAR, DECIMAL, FLOAT, DATETIME, DEFAULT, BOOLEAN},
+    classoffset=3, % starting new class
+    morekeywords={INT, CHAR, VARCHAR, DECIMAL, FLOAT, DATETIME, DEFAULT, BOOLEAN, DATE, TIME, DATETIME},
     keywordstyle=\bfseries\color{codeorange},
     classoffset=0,
     % better highlighting

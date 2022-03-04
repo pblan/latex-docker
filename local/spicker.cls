@@ -50,11 +50,9 @@
 \definecolor{codegreen}{rgb}{0.137, 0.471, 0.255}
 \definecolor{codeblue}{rgb}{0, 0.333, 0.749}
 \definecolor{codeorange}{rgb}{0.996, 0.541, 0.094}
-\definecolor{codegray}{rgb}{0.627, 0.647, 0.663}
+\definecolor{codegrey}{rgb}{0.627, 0.647, 0.663}
 \definecolor{codepurple}{HTML}{C42043}
 \definecolor{backcolour}{HTML}{F2F2F2}
-\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
-\color{bookColor}
 
 \lstset{upquote=true}
 
@@ -93,7 +91,7 @@
 % }
 
 \lstdefinelanguage{mysql}
-    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES, CASE, WHEN, THEN, ELSE, END, CROSS, INTERVAL, YEAR, HOUR, ADD, MODIFY, RENAME, TO, IF, EXISTS, NOT, REPLACE, VIEW, START, TRANSACTION, COMMIT, ROLLBACK, AUTOCOMMIT, FOREIGN_KEY_CHECKS, SET, TRUNCATE, LOCK, WRITE, UNLOCK, DELIMITER, PROCEDURE, BEGIN, CALL, TRIGGER, BEFORE, FOR, EACH, ROW, AFTER},
+    {morekeywords={USE, SELECT, FROM, WHERE, AS, ORDER, ASC, DESC, IS, AND, OR, LIKE, JOIN, INNER, LEFT, RIGHT, FULL, OUTER, ON, UNION, MINUS, INTERSECT, GROUP, BY, IN, HAVING, USE, SHOW, CREATE, UPDATE, ALTER, DESCRIBE, COLUMNS, SCHEMA, SCHEMAS, DATABASE, DATABASES, TABLE, TABLES, INSERT, INTO, VALUES, DROP, PRIMARY, KEY, FOREIGN, CONSTRAINT, REFERENCES, CASE, WHEN, THEN, ELSE, END, CROSS, INTERVAL, YEAR, HOUR, ADD, MODIFY, RENAME, TO, IF, EXISTS, NOT, REPLACE, VIEW, START, TRANSACTION, COMMIT, ROLLBACK, AUTOCOMMIT, FOREIGN_KEY_CHECKS, SET, TRUNCATE, LOCK, WRITE, UNLOCK, DELIMITER, PROCEDURE, BEGIN, CALL, TRIGGER, BEFORE, FOR, EACH, ROW, AFTER, TOP},
     sensitive=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{codeblue},  
@@ -110,8 +108,8 @@
     % {7}{{{\ProcessDigit{7}}}}1
     % {8}{{{\ProcessDigit{8}}}}1
     % {9}{{{\ProcessDigit{9}}}}1,
-    morecomment=[l][\color{codegray}]{--},
-    morecomment=[s][\color{codegray}]{{/*}{*/}},
+    morecomment=[l][\color{codegrey}]{--},
+    morecomment=[s][\color{codegrey}]{{/*}{*/}},
     morestring=[b]",
     morestring=[b]',
     % keyword highlighting
@@ -156,7 +154,7 @@
     % morekeywords={clustered},
     % show small line numbers
     numbers=left,
-    numberstyle=\tiny\color{codegray},
+    numberstyle=\tiny\color{codegrey},
     numbersep=10pt,
     stepnumber=1,
     framesep=5pt,
@@ -206,6 +204,107 @@
 % Diagrams
 \usepackage{tikz}
 \usepackage{tikzscale}
+
+\usetikzlibrary{tikzmark,bbox,calc,automata,arrows.meta,chains,decorations.pathreplacing,scopes,shapes.misc,shapes.multipart}
+
+\tikzset{
+    weight/.style = {
+        scale=0.7,
+        },
+    prim node/.style = {
+        fill = blue!50,
+        text = white,
+        },
+    prim edge/.style = {
+        draw=blue,
+        very thick,
+        },
+    current/.style = {
+        fill = teal!50,
+        },
+    marked/.style = {
+        fill = teal!25,
+        },
+    visited/.style = {
+        fill = teal!30,
+        %text=white,
+        opacity = 0.5,
+    },
+    new/.style = {
+        red,
+    },
+    index small/.style = {
+        minimum width=1.5em,
+        minimum height=0.5em,
+        fill = gray!25,
+    },
+    index/.style = {
+        minimum width=2em,
+        minimum height=0.5em,
+        fill = gray!25,
+    },
+    every state/.style = {
+        minimum size=2em
+    }
+}
+
+\forestset{%
+empty node/.style = {
+    dashed,
+    opacity = .2, 
+    fill opacity = 0.2,
+    edge = {opacity=.2},
+    },
+r/.style = {
+    fill = red!50,
+    text=white,
+    draw=red,
+    calign angle=30,
+    calign=fixed edge angles,
+    %fill opacity = 0.5,
+},
+b/.style = {
+    fill = black!50,
+    text=white,
+    draw=black,
+    calign angle=30,
+    calign=fixed edge angles,
+    %fill opacity = 0.5,
+},
+rbn/.style = { %red black not defined
+    fill = blue!50,
+    text=white,
+    draw=black,
+    calign angle=30,
+    calign=fixed edge angles,
+    %fill opacity = 0.5,
+},
+nil/.style = {
+    fill = black!50,
+    minimum size=1em,
+    calign angle=30,
+    calign=fixed edge angles,
+    %fill opacity = 0.5,
+},
+mpn/.style args = {#1/#2/#3/#4}{draw,
+rectangle split, rectangle split horizontal,
+rectangle split parts=4,
+on chain=A,
+draw=black!50,
+node contents={ \nodepart{one}    $#1$
+                \nodepart{two}    $#2$
+                \nodepart{three}  $#3$
+                \nodepart{four}   $#4$}
+                            },
+}
+
+\newcommand\mpnc[4]{\nodepart{one}      $#1$
+                    \nodepart{two}      $#2$                    
+                    \nodepart{three}    $#3$
+                    \nodepart{four}     $#4$
+                    }
+
+
 \usepackage{pgfplots, pgfplotstable}
 \usepgfplotslibrary{fillbetween}
 
