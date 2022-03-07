@@ -412,6 +412,13 @@ node contents={ \nodepart{one}    $#1$
 }{%
 \end{tcolorbox}}
 
+% SWT specific
+\newenvironment{diag}[1]{%
+\index{#1}%
+\begin{tcolorbox}[colback=fhblue!5!white, colframe=fhblue!75!black, title={\sffamily \IfLanguageName{ngerman}{Diagramm}{Diagram}: #1}]
+}{%
+\end{tcolorbox}}
+
 \newenvironment{sqlbonus}[1]{%
 \index[SQL]{#1}%
 \begin{tcolorbox}[colback=fhpurple!5!white, colframe=fhpurple!75!black, title={\sffamily SQL-Bonus: #1}]
