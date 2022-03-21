@@ -205,7 +205,7 @@
 \usepackage{tikz}
 \usepackage{tikzscale}
 
-\usetikzlibrary{tikzmark,bbox,calc,automata,arrows.meta,chains,decorations.pathreplacing,matrix,scopes,shapes.misc,shapes.multipart}
+\usetikzlibrary{tikzmark,bbox,calc,automata,arrows.meta,chains,decorations.pathreplacing,matrix,scopes,shapes.misc,shapes.multipart,backgrounds}
 
 \tikzset{
     weight/.style = {
