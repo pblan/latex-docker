@@ -41,10 +41,11 @@
 \DeclareMathOperator{\Mean}{E}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
-\DeclareMathOperator{\img}{img} 
+\DeclareMathOperator{\Bild}{Bild} 
 \DeclareMathOperator{\defect}{defect}
-\DeclareMathOperator{\rank}{rank}
-\DeclareMathOperator{\trace}{trace} 
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\spur}{spur} 
+\DeclareMathOperator{\diagonal}{diag} 
 \DeclareMathOperator{\Sol}{Sol}
 \DeclareMathOperator{\row}{row}
 \DeclareMathOperator{\col}{col}
@@ -106,23 +107,23 @@
 \RequirePackage{tikzscale}
 \usepackage{subcaption}
 
-\usepackage{pstricks-add}
-\psset{unit = 3}
+% \usepackage{pstricks-add}
+% \psset{unit = 3}
 
-\def\target(#1,#2){%
- {\psset{fillstyle = solid}
-  \rput(#1,#2){%
-    \pscircle[fillcolor = white](0.7,0.7){0.7}
-    \pscircle[fillcolor = blue!60](0.7,0.7){0.5}
-    \pscircle[fillcolor = white](0.7,0.7){0.3}
-    \pscircle[fillcolor = red!80](0.7,0.7){0.1}}}}
-\def\dots[#1](#2,#3){%
-    \psRandom[
-      dotsize = 2pt,
-      randomPoints = 25
-    ](!#2 #1 0.04 sub sub #3 #1 0.04 sub sub)%
-     (!#2 #1 0.04 sub add #3 #1 0.04 sub add)%
-     {\pscircle[linestyle = none](#2,#3){#1}}}
+% \def\target(#1,#2){%
+%  {\psset{fillstyle = solid}
+%   \rput(#1,#2){%
+%     \pscircle[fillcolor = white](0.7,0.7){0.7}
+%     \pscircle[fillcolor = blue!60](0.7,0.7){0.5}
+%     \pscircle[fillcolor = white](0.7,0.7){0.3}
+%     \pscircle[fillcolor = red!80](0.7,0.7){0.1}}}}
+% \def\dots[#1](#2,#3){%
+%     \psRandom[
+%       dotsize = 2pt,
+%       randomPoints = 25
+%     ](!#2 #1 0.04 sub sub #3 #1 0.04 sub sub)%
+%      (!#2 #1 0.04 sub add #3 #1 0.04 sub add)%
+%      {\pscircle[linestyle = none](#2,#3){#1}}}
 
 
 \RequirePackage{pgfplots, pgfplotstable}

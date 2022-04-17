@@ -20,6 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enable utf8
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Typesetting
@@ -42,7 +43,7 @@
 \definecolor{codegreen}{rgb}{0.137, 0.471, 0.255}
 \definecolor{codeblue}{rgb}{0, 0.333, 0.749}
 \definecolor{codeorange}{rgb}{0.996, 0.541, 0.094}
-\definecolor{codegray}{rgb}{0.627, 0.647, 0.663}
+\definecolor{codegrey}{rgb}{0.627, 0.647, 0.663}
 \definecolor{codepurple}{HTML}{C42043}
 \definecolor{backcolour}{HTML}{F2F2F2}
 
@@ -102,8 +103,8 @@
     % {7}{{{\ProcessDigit{7}}}}1
     % {8}{{{\ProcessDigit{8}}}}1
     % {9}{{{\ProcessDigit{9}}}}1,
-    morecomment=[l][\color{codegray}]{--},
-    morecomment=[s][\color{codegray}]{{/*}{*/}},
+    morecomment=[l][\color{codegrey}]{--},
+    morecomment=[s][\color{codegrey}]{{/*}{*/}},
     morestring=[b]",
     morestring=[b]',
     % keyword highlighting
@@ -148,7 +149,7 @@
     % morekeywords={clustered},
     % show small line numbers
     numbers=left,
-    numberstyle=\tiny\color{codegray},
+    numberstyle=\tiny\color{codegrey},
     numbersep=10pt,
     stepnumber=1,
     framesep=5pt,
@@ -157,6 +158,8 @@
     %frame=ltb,
     frame=l,
     framerule=0pt,
+    % better highlighting
+    moredelim=**[is][\btHL]{!}{!},
 }
 \lstset{style=MatseInputStyle}
 
