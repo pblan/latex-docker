@@ -1,6 +1,6 @@
 # latex-docker
 ## Setup
-Building the image:
+Building the image (optional):
 
 ```bash
 docker build -t "pblan/latex" .
@@ -19,7 +19,7 @@ version: '3.7'
 services:
   latex:
     container_name: latex
-    image: pblan/latex
+    build: .
     volumes:
       # required
       - .:/root/texmf/tex/latex
