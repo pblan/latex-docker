@@ -136,8 +136,11 @@
   morecomment=[s]{/*}{*/},
   morecomment=[l]//,
   morestring=[b]",
-  morestring=[b]'
+  morestring=[b]',
+  % better highlighting
+  moredelim=**[is][\btHL]{^}{^},
 }
+
 \lstdefinelanguage{CSS}{
   keywords={accelerator,azimuth,background,background-attachment,
         background-color,background-image,background-position,
@@ -193,7 +196,9 @@
   morestring=[b]',
   morestring=[b]",
   alsoletter={:},
-  alsodigit={-}
+  alsodigit={-},
+  % better highlighting
+  moredelim=**[is][\btHL]{^}{^},
 }
 \lstdefinelanguage{HTML5}{
         language=html,
@@ -375,7 +380,9 @@
         word-spacing:,word-wrap:,writing-mode:,z-index:,zoom:
         },  
         morecomment=[s]{<!--}{-->},
-        tag=[s]
+        tag=[s],
+        % better highlighting
+        moredelim=**[is][\btHL]{^}{^},
 }
 
 
@@ -413,6 +420,8 @@
     framerule=0pt,
     % Code
     alsodigit={.:;},
+    % better highlighting
+    moredelim=**[is][\btHL]{^}{^},
 }
 \lstset{style=MatseInputStyle}
 
