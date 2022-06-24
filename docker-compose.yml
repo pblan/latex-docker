@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  latex:
+    container_name: latex
+    image: pblan/latex
+    volumes:
+      # required
+      - .:/root/texmf/tex/latex
+      # change lines below if necessary
+      - ../fha-num1:/mnt/fha-num1/
+      - ../fha-kosy:/mnt/fha-kosy/
+      - ../fha-weit:/mnt/fha-weit/
+      - ../fha-ki:/mnt/fha-ki/
+      - ../fha-ds:/mnt/fha-ds/
+      - ../fha-seminar:/mnt/fha-seminar/
+      - ../matse-spicker:/mnt/matse-spicker/
+    tty: true
+    restart: always
