@@ -7,9 +7,12 @@ services:
       # required
       - .:/root/texmf/tex/latex
       # change lines below if necessary
-      - ../fha-sto:/mnt/fha-sto/
-      - ../fha-swt:/mnt/fha-swt/
-      - ../fha-db:/mnt/fha-db/
+      - ../fha-num1:/mnt/fha-num1/
+      - ../fha-kosy:/mnt/fha-kosy/
+      - ../fha-weit:/mnt/fha-weit/
+      - ../fha-ki:/mnt/fha-ki/
+      - ../fha-ds:/mnt/fha-ds/
+      - ../fha-seminar:/mnt/fha-seminar/
       - ../matse-spicker:/mnt/matse-spicker/
     tty: true
     restart: always
