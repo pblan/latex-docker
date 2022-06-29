@@ -131,6 +131,66 @@
   moredelim=**[is][\btHL]{!}{!},
 }
 
+% \lstdefinelanguage{XML}
+% {
+%   morestring=[s][\color{codered}]{"}{"},
+%   morestring=[s][\color{black}]{>}{<},
+%   morecomment=[s][\color{codegreen}]{<?}{?>},
+%   morecomment=[s][\color{codegreen}]{<!--}{-->},
+%   stringstyle=\color{black},
+%   identifierstyle=\color{codeblue},
+%   keywordstyle=\color{codered},
+%   morekeywords={xmlns,xsi,noNamespaceSchemaLocation,type,id,x,y,source,target,version,tool,transRef,roleRef,objective,eventually}% list your attributes here
+% }
+
+% \lstdefinelanguage{matseXML}{
+%   emphstyle=\color{codered}, basicstyle=\small\ttfamily, columns=fullflexible, showstringspaces=false, commentstyle=\color{codegreen}\upshape,
+%   morestring=[b][\color{codered}]",
+%   morecomment=[s]{<?}{?>},
+%   morecomment=[s]{<!--}{-->},
+%   keywordstyle=\color{codeblue},
+%   stringstyle=\color{codepurple},
+%   morekeywords={xmlns,version,type},
+% }
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s][\color{codeblue}]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{codeblue},
+  keywordstyle=\color{codegreen},
+  stringstyle=\color{codered},
+  morekeywords={version,type,name,default,minOccurs,maxOccurs,value,base}% list your attributes here
+}
+
+% \lstdefinelanguage{JSON}{
+%     commentstyle=\color{codered}, % style of comment
+%     stringstyle=\color{codeblue}, % style of strings
+%     % numberstyle=\scriptsize,
+%     string=[s]{"}{"},
+%     comment=[s]{:\ "},
+%     morecomment=[s]{:"},
+%     % literate=
+%     %     *{0}{{{\color{codeblue}0}}}{1}
+%     %      {1}{{{\color{codeblue}1}}}{1}
+%     %      {2}{{{\color{codeblue}2}}}{1}
+%     %      {3}{{{\color{codeblue}3}}}{1}
+%     %      {4}{{{\color{codeblue}4}}}{1}
+%     %      {5}{{{\color{codeblue}5}}}{1}
+%     %      {6}{{{\color{codeblue}6}}}{1}
+%     %      {7}{{{\color{codeblue}7}}}{1}
+%     %      {8}{{{\color{codeblue}8}}}{1}
+%     %      {9}{{{\color{codeblue}9}}}{1}
+% }
+\lstdefinelanguage{JSON}{
+  string=[s]{"}{"},
+  stringstyle=\color{blue},
+  comment=[l]{:},
+  commentstyle=\color{black},
+}
+
 \lstdefinelanguage{JavaScript}{
   morekeywords={break, case, catch, continue, debugger, default, delete,         do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
   morecomment=[s]{/*}{*/},
