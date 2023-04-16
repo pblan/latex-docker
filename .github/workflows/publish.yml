@@ -4,7 +4,9 @@ name: Create and publish Docker image
 
 on:
   push:
-    branches: ['release']
+    # Pattern matched against refs/tags
+    tags:        
+      - '**'           # Push events to every tag including hierarchical tags like v1.0/beta
 
 env:
   REGISTRY: ghcr.io
